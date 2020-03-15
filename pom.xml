@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.kdbtree</groupId>
+  <artifactId>kdbtree</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <name>The db-tree library</name>
+  <description>The official library that implements a DB-Tree in kotlin</description>
+  <url>https://github.com/kdbtree/kdbtree</url>
+  <inceptionYear>2019</inceptionYear>
+  <licenses>
+    <license>
+      <name>GNU General Lesser Public License (LGPL) version 3.0</name>
+      <url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>Pennino</id>
+      <name>Diego Pennino</name>
+      <email>pennino@ing.uniroma3.it</email>
+    </developer>
+    <developer>
+      <id>Pizzonia</id>
+      <name>Maurizio Pizzonia</name>
+      <email>pizzonia@dia.uniroma3.it</email>
+    </developer>
+    <developer>
+      <id>Papi</id>
+      <name>Alessio Papi</name>
+      <email>alessio.papi16@gmail.com</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/kdbtree/kdbtree.git</connection>
+    <developerConnection>scm:git:ssh://github.com:kdbtree/kdbtree.git</developerConnection>
+    <url>https://github.com/kdbtree/kdbtree</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlinx</groupId>
+      <artifactId>kotlinx-coroutines-core</artifactId>
+      <version>1.3.3</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
