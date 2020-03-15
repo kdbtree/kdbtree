@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Connector.delete - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree</a>&nbsp;/&nbsp;<a href="index.html">Connector</a>&nbsp;/&nbsp;<a href="./delete.html">delete</a><br/>
+<br/>
+<h1>delete</h1>
+<a name="it.uniroma3.dbtree.Connector$delete(kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.Connector$delete(kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/nodes">nodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/index.html"><span class="identifier">Triple</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/Connector.kt#L214">(source)</a>
+<p>Delete a batch of nodes from the database.</p>
+<p>Should be executed within a transaction.
+The batch of nodes is univocally identified by their primary key, which is represented by the triple:
+&lt;level, k_min, k_max&gt;. The keys must be passed as serialized.</p>
+<h3>Parameters</h3>
+<p><a name="nodes"></a>
+<code>nodes</code> - the nodes' collection to be deleted.</p>
+<a name="it.uniroma3.dbtree.Connector$delete(kotlin.Triple((kotlin.Int, kotlin.String, )))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.Connector$delete(kotlin.Triple((kotlin.Int, kotlin.String, )))/node">node</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/index.html"><span class="identifier">Triple</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/Connector.kt#L225">(source)</a>
+<p>Delete node from the database.</p>
+<p>Should be executed within a transaction.
+The nodes is univocally identified by its primary key, which is represented by the triple:
+&lt;level, k_min, k_max&gt;. The keys must be passed as serialized.</p>
+<h3>Parameters</h3>
+<p><a name="node"></a>
+<code>node</code> - the node to be deleted.</p>
+</BODY>
+</HTML>

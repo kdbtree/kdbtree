@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DBTree.BatchNode - kdbtree</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../../index.html">it.uniroma3.dbtree</a>&nbsp;/&nbsp;<a href="../index.html">DBTree</a>&nbsp;/&nbsp;<a href="./index.html">BatchNode</a><br/>
+<br/>
+<h1>BatchNode</h1>
+<code><span class="keyword">inner</span> <span class="keyword">class </span><span class="identifier">BatchNode</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">A</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">D</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/DBTree.kt#L1462">(source)</a>
+<p>Auxiliary node type, dedicated to the insertBatch algorithm.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Auxiliary node type, dedicated to the insertBatch algorithm.</p>
+<code><span class="identifier">BatchNode</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$<init>(kotlin.Int, it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.K, java.util.LinkedList((kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))), java.util.LinkedList((it.uniroma3.dbtree.DBTree.BatchNode((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V, it.uniroma3.dbtree.DBTree.A, it.uniroma3.dbtree.DBTree.D)))))/level">level</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$<init>(kotlin.Int, it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.K, java.util.LinkedList((kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))), java.util.LinkedList((it.uniroma3.dbtree.DBTree.BatchNode((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V, it.uniroma3.dbtree.DBTree.A, it.uniroma3.dbtree.DBTree.D)))))/k_min">k_min</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$<init>(kotlin.Int, it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.K, java.util.LinkedList((kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))), java.util.LinkedList((it.uniroma3.dbtree.DBTree.BatchNode((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V, it.uniroma3.dbtree.DBTree.A, it.uniroma3.dbtree.DBTree.D)))))/k_max">k_max</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$<init>(kotlin.Int, it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.K, java.util.LinkedList((kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))), java.util.LinkedList((it.uniroma3.dbtree.DBTree.BatchNode((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V, it.uniroma3.dbtree.DBTree.A, it.uniroma3.dbtree.DBTree.D)))))/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/util/LinkedList.html"><span class="identifier">LinkedList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$<init>(kotlin.Int, it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.K, java.util.LinkedList((kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))), java.util.LinkedList((it.uniroma3.dbtree.DBTree.BatchNode((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V, it.uniroma3.dbtree.DBTree.A, it.uniroma3.dbtree.DBTree.D)))))/descendants">descendants</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/util/LinkedList.html"><span class="identifier">LinkedList</span></a><span class="symbol">&lt;</span><span class="identifier">BatchNode</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">A</span><span class="symbol">,</span>&nbsp;<span class="identifier">D</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="context.html">context</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">context</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/LinkedList.html"><span class="identifier">LinkedList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="descendants.html">descendants</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">descendants</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/LinkedList.html"><span class="identifier">LinkedList</span></a><span class="symbol">&lt;</span><span class="identifier">BatchNode</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">A</span><span class="symbol">,</span>&nbsp;<span class="identifier">D</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="k_max.html">k_max</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">k_max</span><span class="symbol">: </span><span class="identifier">K</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="k_min.html">k_min</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">k_min</span><span class="symbol">: </span><span class="identifier">K</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="level.html">level</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">level</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="find-nearest.html">findNearest</a></h4>
+</td>
+<td>
+<p>Returns the batchNode keys (eventually k_min/k_max) nearest to the given key.</p>
+<code><span class="keyword">fun </span><span class="identifier">findNearest</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$findNearest(it.uniroma3.dbtree.DBTree.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">K</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert.html">insert</a></h4>
+</td>
+<td>
+<p>Inserts a new pair into the batch node context, respecting key-ordering.</p>
+<code><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$insert(kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="split.html">split</a></h4>
+</td>
+<td>
+<p>Splits the current node according to a certain key.</p>
+<code><span class="keyword">fun </span><span class="identifier">split</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree.BatchNode$split(it.uniroma3.dbtree.DBTree.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">BatchNode</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">A</span><span class="symbol">,</span>&nbsp;<span class="identifier">D</span><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">,</span>&nbsp;<span class="identifier">BatchNode</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">A</span><span class="symbol">,</span>&nbsp;<span class="identifier">D</span><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

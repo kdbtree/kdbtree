@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KeyParser.geqDB - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree</a>&nbsp;/&nbsp;<a href="index.html">KeyParser</a>&nbsp;/&nbsp;<a href="./geq-d-b.html">geqDB</a><br/>
+<br/>
+<h1>geqDB</h1>
+<a name="it.uniroma3.dbtree.KeyParser$geqDB(kotlin.String, it.uniroma3.dbtree.KeyParser.K)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">geqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.KeyParser$geqDB(kotlin.String, it.uniroma3.dbtree.KeyParser.K)/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.KeyParser$geqDB(kotlin.String, it.uniroma3.dbtree.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/KeyParser.kt#L156">(source)</a>
+<p>DB query for 'greater than or equal' relationship.</p>
+<p>Returns the string querying underlying DB for all elements having key (attribute) greater than or equal to
+a given value. Underlying dataset must know how to interpret the query, and return the expected result.</p>
+<h3>Parameters</h3>
+<p><a name="columnName"></a>
+<code>columnName</code> - the name of the database column interested in the comparison; since this method is only
+invoked from connector's queries, this field must refer to some columnName from this.keyColumnsDefinitionDB();
+Additional checks over this field could be implemented to prevent runtime errors.</p>
+<p><a name="k"></a>
+<code>k</code> - the key soil value.</p>
+<p><strong>Return</strong><br/>
+the string to be interpreted by underlying database.</p>
+</BODY>
+</HTML>

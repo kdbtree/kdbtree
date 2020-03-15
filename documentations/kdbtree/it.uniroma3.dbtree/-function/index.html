@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Function - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree</a>&nbsp;/&nbsp;<a href="./index.html">Function</a><br/>
+<br/>
+<h1>Function</h1>
+<code><span class="keyword">interface </span><span class="identifier">Function</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">A</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">D</span><span class="symbol">&gt;</span></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/Function.kt#L34">(source)</a>
+<p>Interface for the decomposable aggregation function α ≔ 〈f, g, h〉 supported by the DB-tree.</p>
+<p>The decomposable aggregation function α is defined such that α(v₁, ... , vₙ) = h(f(g(v₁), ... , g(vₙ))), where:
+g: V -&gt; A
+f: A₁, ..., Aₙ -&gt; A  (core aggregation function)
+h: A -&gt; D</p>
+<h3>Parameters</h3>
+<p><a name="V"></a>
+<code>V</code> - the type of the atomic values stored in the DB-tree.</p>
+<p><a name="A"></a>
+<code>A</code> - the type of the aggregate values.</p>
+<p><a name="D"></a>
+<code>D</code> - the final result type, calculated over the final aggregate value.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="f.html">f</a></h4>
+</td>
+<td>
+<p>Function's component for the combination of aggregate values.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">f</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.Function$f(kotlin.collections.List((it.uniroma3.dbtree.Function.A)))/aggList">aggList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">A</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">A</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="g.html">g</a></h4>
+</td>
+<td>
+<p>Computes the aggregate value from an atomic value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">g</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.Function$g(it.uniroma3.dbtree.Function.V)/v">v</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">A</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="h.html">h</a></h4>
+</td>
+<td>
+<p>Generates a final result from an aggregate value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">h</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.Function$h(it.uniroma3.dbtree.Function.A)/a">a</span><span class="symbol">:</span>&nbsp;<span class="identifier">A</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">D</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="identity.html">identity</a></h4>
+</td>
+<td>
+<p>Returns the identity aggregate value for this aggregation function.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">identity</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">A</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="parse-a.html">parseA</a></h4>
+</td>
+<td>
+<p>Parser for the aggregate value type.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">parseA</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.Function$parseA(kotlin.String)/s">s</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">A</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="parse-v.html">parseV</a></h4>
+</td>
+<td>
+<p>Parser for the atomic value type.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">parseV</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.Function$parseV(kotlin.String)/s">s</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">V</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

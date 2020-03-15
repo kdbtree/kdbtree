@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NodeTransfer - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree</a>&nbsp;/&nbsp;<a href="./index.html">NodeTransfer</a><br/>
+<br/>
+<h1>NodeTransfer</h1>
+<code><span class="keyword">class </span><span class="identifier">NodeTransfer</span></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/NodeTransfer.kt#L28">(source)</a>
+<p>DTO for a DB-tree node, employed for mediating communications with the database.</p>
+<p>This DTO is necessary due to the possible conversion in the representation of the keys(and elements nodes) from
+database world to the in-memory one. NodeTransfer stores keys and context in the form of strings.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>DTO for a DB-tree node, employed for mediating communications with the database.</p>
+<code><span class="identifier">NodeTransfer</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.NodeTransfer$<init>(kotlin.Int, kotlin.String, kotlin.String, kotlin.String)/level">level</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.NodeTransfer$<init>(kotlin.Int, kotlin.String, kotlin.String, kotlin.String)/k_min">k_min</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.NodeTransfer$<init>(kotlin.Int, kotlin.String, kotlin.String, kotlin.String)/k_max">k_max</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.NodeTransfer$<init>(kotlin.Int, kotlin.String, kotlin.String, kotlin.String)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="context.html">context</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">context</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="k_max.html">k_max</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">k_max</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="k_min.html">k_min</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">k_min</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="level.html">level</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">level</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="parse-context.html">parseContext</a></h4>
+</td>
+<td>
+<p>Parse a DTO context into a DBTree one</p>
+<code><span class="keyword">fun </span><span class="identifier">parseContext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/LinkedList.html"><span class="identifier">LinkedList</span></a><span class="symbol">&lt;</span><a href="../-d-b-element/index.html"><span class="identifier">DBElement</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-string.html">toString</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

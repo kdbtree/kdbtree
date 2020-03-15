@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DBElement.<init> - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree</a>&nbsp;/&nbsp;<a href="index.html">DBElement</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="it.uniroma3.dbtree.DBElement$&lt;init&gt;(kotlin.String)"></a>
+<code><span class="identifier">DBElement</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBElement$<init>(kotlin.String)/content">content</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code>
+<p>Class representing the atomic component of each node.</p>
+<p>Can be either an aggregated value (A:x), or a key-value pair (P:(x,y)).
+The discrimination happens by means of the boolean</p>
+<p><strong>Field</strong><br/>
+<p>isAgg: that goes true if the content is an aggregated value.</p>
+
+
+<p>The DBElement stores the values of pairs and aggregated values
+in the form of Strings (i.e. they are always stored as non-parsed,
+hence not in their actual types).
+Parsing to the actual type is performed every time we need to execute
+some operation (e.g. comparisons, etc) with the actual content of the
+DBElement.</p>
+</p>
+</BODY>
+</HTML>

@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DBTree - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree</a>&nbsp;/&nbsp;<a href="./index.html">DBTree</a><br/>
+<br/>
+<h1>DBTree</h1>
+<code><span class="keyword">class </span><span class="identifier">DBTree</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">A</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">D</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/DBTree.kt#L43">(source)</a>
+<p>The DBTree class.</p>
+<h3>Parameters</h3>
+<p><a name="K"></a>
+<code>K</code> - the key for the DB nodes.</p>
+<p><a name="V"></a>
+<code>V</code> - the values associated with the keys.</p>
+<p><a name="A"></a>
+<code>A</code> - the partial result of the aggregation function.</p>
+<p><a name="D"></a>
+<code>D</code> - the definitive result of the aggregation function.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-batch-node/index.html">BatchNode</a></h4>
+</td>
+<td>
+<p>Auxiliary node type, dedicated to the insertBatch algorithm.</p>
+<code><span class="keyword">inner</span> <span class="keyword">class </span><span class="identifier">BatchNode</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">A</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">D</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>The DBTree class.</p>
+<code><span class="identifier">DBTree</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$<init>(it.uniroma3.dbtree.Function((it.uniroma3.dbtree.DBTree.V, it.uniroma3.dbtree.DBTree.A, it.uniroma3.dbtree.DBTree.D)), it.uniroma3.dbtree.Connector((it.uniroma3.dbtree.DBTree.K)))/f">f</span><span class="symbol">:</span>&nbsp;<a href="../-function/index.html"><span class="identifier">Function</span></a><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">A</span><span class="symbol">,</span>&nbsp;<span class="identifier">D</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.DBTree$<init>(it.uniroma3.dbtree.Function((it.uniroma3.dbtree.DBTree.V, it.uniroma3.dbtree.DBTree.A, it.uniroma3.dbtree.DBTree.D)), it.uniroma3.dbtree.Connector((it.uniroma3.dbtree.DBTree.K)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="../-connector/index.html"><span class="identifier">Connector</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="authenticated-query.html">authenticatedQuery</a></h4>
+</td>
+<td>
+<p>Algorithm for performing an authenticated query on a DB-tree T.</p>
+<code><span class="keyword">fun </span><span class="identifier">authenticatedQuery</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$authenticatedQuery(it.uniroma3.dbtree.DBTree.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">?</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/LinkedList.html"><span class="identifier">LinkedList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="close.html">close</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="delete.html">delete</a></h4>
+</td>
+<td>
+<p>Algorithm for deleting a key k (and the corresponding value) from the DB-tree T, supposing the key is contained
+in T.</p>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$delete(it.uniroma3.dbtree.DBTree.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="group-by.html">groupBy</a></h4>
+</td>
+<td>
+<p>Algorithm for performing a group-by range query on a DB-tree T.</p>
+<code><span class="keyword">fun </span><span class="identifier">groupBy</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$groupBy(kotlin.Pair((kotlin.Any, )))/range">range</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">D</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert.html">insert</a></h4>
+</td>
+<td>
+<p>Algorithm for inserting a new key-value pair into the DB-tree T, supposing the key is not yet contained in T.</p>
+<code><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$insert(kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert-batch.html">insertBatch</a></h4>
+</td>
+<td>
+<p>Algorithm for inserting a batch of new key-value pairs into an empty DB-tree.</p>
+<code><span class="keyword">fun </span><span class="identifier">insertBatch</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$insertBatch(kotlin.collections.List((kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))))/list">list</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="range-query.html">rangeQuery</a></h4>
+</td>
+<td>
+<p>Algorithm for performing an aggregate range query on the DB-tree.</p>
+<code><span class="keyword">fun </span><span class="identifier">rangeQuery</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$rangeQuery(kotlin.Pair((it.uniroma3.dbtree.DBTree.K, )))/range">range</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">D</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="update.html">update</a></h4>
+</td>
+<td>
+<p>Algorithm for updating a key k in the DB-tree T with a new value v assuming that k is already present in T.</p>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.DBTree$update(kotlin.Pair((it.uniroma3.dbtree.DBTree.K, it.uniroma3.dbtree.DBTree.V)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
