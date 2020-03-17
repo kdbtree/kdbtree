@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.kdbtree</groupId>
   <artifactId>kdbtree</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
   <name>The db-tree library</name>
   <description>The official library that implements a DB-Tree in kotlin</description>
   <url>https://github.com/kdbtree/kdbtree</url>
