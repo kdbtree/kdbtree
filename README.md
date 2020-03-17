@@ -1,5 +1,6 @@
- 
-# dbtree
+ # dbtree
+ [![Maven Central](https://img.shields.io/maven-central/v/com.github.kdbtree/kdbtree.svg?label=Maven%20Central&color=success&style=plastic)](https://search.maven.org/search?q=g:%22com.github.kdbtree%22%20AND%20a:%22kdbtree%22)
+![GitHub](https://img.shields.io/github/license/kdbtree/kdbtree?color=informational&style=plastic)
 
 The `dbtree` library is a realization of the DB-tree 
 data structure 
