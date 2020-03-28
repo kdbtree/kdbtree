@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KeyParserGroupBy.most_neqDB - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi</a>&nbsp;/&nbsp;<a href="index.html">KeyParserGroupBy</a>&nbsp;/&nbsp;<a href="./most_neq-d-b.html">most_neqDB</a><br/>
+<br/>
+<h1>most_neqDB</h1>
+<a name="it.uniroma3.dbtree.spi.KeyParserGroupBy$most_neqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.String)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">most_neqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$most_neqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.String)))/columnNameMin">columnNameMin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$most_neqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.String)))/columnNameMax">columnNameMax</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/KeyParserGroupBy.kt#L146">(source)</a>
+<p>Let k_min = (x_min, y_min).
+Let k_max = (x_max, y_max).</p>
+<p>DB query for 'x_min not equal to x_max' relationship.</p>
+<p>Returns the string querying underlying DB for all elements having  k_min and k_max with a different most significant part.
+Underlying dataset must know how to interpret the query, and return the expected result.</p>
+<h3>Parameters</h3>
+<p><a name="columnNameMin"></a>
+<code>columnNameMin</code> - the list of the names of the database columns interested in the comparison
+(they represent the x_min).</p>
+<p><a name="columnNameMax"></a>
+<code>columnNameMax</code> - the list of the names of the database columns interested in the comparison
+(they represent the x_max).</p>
+<p><strong>Return</strong><br/>
+the string to be interpreted by underlying database as x_min != x_max.</p>
+</BODY>
+</HTML>

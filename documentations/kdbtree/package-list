@@ -2,3 +2,7 @@ $dokka.format:html
 $dokka.linkExtension:html
 
 it.uniroma3.dbtree
+it.uniroma3.dbtree.spi
+it.uniroma3.dbtree.spi.impl.connectors
+it.uniroma3.dbtree.spi.impl.functions
+it.uniroma3.dbtree.spi.impl.keyParsers

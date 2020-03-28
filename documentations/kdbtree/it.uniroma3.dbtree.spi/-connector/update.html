@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Connector.update - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi</a>&nbsp;/&nbsp;<a href="index.html">Connector</a>&nbsp;/&nbsp;<a href="./update.html">update</a><br/>
+<br/>
+<h1>update</h1>
+<a name="it.uniroma3.dbtree.spi.Connector$update(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$update(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)))/nodes">nodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/Connector.kt#L237">(source)</a>
+<p>Update a batch of nodes of the database.</p>
+<p>Should be executed within a transaction.
+The batch of nodes will be passed as NodeTransfers instances, so that both (I) their primary keys and (II) the
+new contexts will be provided.</p>
+<h3>Parameters</h3>
+<p><a name="nodes"></a>
+<code>nodes</code> - the batch to be updated.</p>
+<a name="it.uniroma3.dbtree.spi.Connector$update(it.uniroma3.dbtree.NodeTransfer)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$update(it.uniroma3.dbtree.NodeTransfer)/node">node</span><span class="symbol">:</span>&nbsp;<a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/Connector.kt#L248">(source)</a>
+<p>Update a node of the database.</p>
+<p>Should be executed within a transaction.
+The node will be passed as NodeTransfer instance, so that both (I) its primary keys and (II) the
+new context will be provided.</p>
+<h3>Parameters</h3>
+<p><a name="node"></a>
+<code>node</code> - the node to be updated.</p>
+</BODY>
+</HTML>

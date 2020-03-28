@@ -1,0 +1,225 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Connector - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi</a>&nbsp;/&nbsp;<a href="./index.html">Connector</a><br/>
+<br/>
+<h1>Connector</h1>
+<code><span class="keyword">interface </span><span class="identifier">Connector</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/Connector.kt#L36">(source)</a>
+<p>Interface for the database connector.</p>
+<p>This interface provides methods to establish and exploit the connection with the underlying database.
+The DB-tree class will refer to this interface to create, retrieve, update and delete the persisted nodes necessary
+to the application logic.</p>
+<p>All operation modifying the state of the database should be performed within a transaction, in order not to
+cause inconsistencies.</p>
+<h3>Parameters</h3>
+<p><a name="K"></a>
+<code>K</code> - the KeyParser parameter, actually, the key type.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="connection-url.html">connectionUrl</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">connectionUrl</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="database-name.html">databaseName</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">databaseName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="kp.html">kp</a></h4>
+</td>
+<td>
+<p>The KeyParser attribute for the Connector.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">kp</span><span class="symbol">: </span><a href="../-key-parser/index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="password.html">password</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">password</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="table-base-name.html">tableBaseName</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">tableBaseName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="username.html">username</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">username</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="close.html">close</a></h4>
+</td>
+<td>
+<p>Disconnects from the underlying database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="connect.html">connect</a></h4>
+</td>
+<td>
+<p>Connects with the underlying database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">connect</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$connect(kotlin.String, kotlin.Int, kotlin.String)/aggrFunName">aggrFunName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$connect(kotlin.String, kotlin.Int, kotlin.String)/maxLevel">maxLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$connect(kotlin.String, kotlin.Int, kotlin.String)/initRootContext">initRootContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="create.html">create</a></h4>
+</td>
+<td>
+<p>Insert a batch of new nodes into the database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$create(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)))/nodes">nodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Insert a node into the database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$create(it.uniroma3.dbtree.NodeTransfer)/node">node</span><span class="symbol">:</span>&nbsp;<a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="delete.html">delete</a></h4>
+</td>
+<td>
+<p>Delete a batch of nodes from the database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$delete(kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/nodes">nodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/index.html"><span class="identifier">Triple</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Delete node from the database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$delete(kotlin.Triple((kotlin.Int, kotlin.String, )))/node">node</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/index.html"><span class="identifier">Triple</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-delete.html">getDelete</a></h4>
+</td>
+<td>
+<p>Retrieve from the database all nodes n s.t. n.min &lt;= k &lt;= n.max, ordered by ascending level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDelete</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getDelete(it.uniroma3.dbtree.spi.Connector.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-group-by-l.html">getGroupByL</a></h4>
+</td>
+<td>
+<p>Retrieve from the database all nodes n s.t. y1 &lt; n.k_max.y ≤ y2 ∧ (n.k_min.y &lt; y1 ∨ n.k_min.x ≠ n.k_max.x),
+ordered by ascending level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroupByL</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getGroupByL(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/y1">y1</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getGroupByL(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/y2">y2</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-group-by-n-bar.html">getGroupByNBar</a></h4>
+</td>
+<td>
+<p>Retrieve from the database all pairs (x,n) s.t. x ∈ X ∧ n.k_min &lt; (x, y1) &lt; (x, y2) &lt; n.k_max, having maximum
+level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroupByNBar</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getGroupByNBar(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/y1">y1</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getGroupByNBar(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/y2">y2</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-group-by-r.html">getGroupByR</a></h4>
+</td>
+<td>
+<p>Retrieve from the database all nodes n s.t. y1 ≤ n.k_min.y &lt; y2 ∧ (y2 &lt; n.k_max.y ∨ n.k_min.x ≠ n.k_max.x),
+ordered by ascending level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroupByR</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getGroupByR(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/y1">y1</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getGroupByR(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/y2">y2</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-including-k.html">getIncludingK</a></h4>
+</td>
+<td>
+<p>Retrieve from the database all nodes n s.t. n.k_min &lt; k &lt; n.k_max, ordered by ascending level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncludingK</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getIncludingK(it.uniroma3.dbtree.spi.Connector.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-range-query-l.html">getRangeQueryL</a></h4>
+</td>
+<td>
+<p>Retrieve from the database all nodes n s.t. n.k_min &lt; k1 &lt; n.k_max ≤ k2, ordered by ascending level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRangeQueryL</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getRangeQueryL(it.uniroma3.dbtree.spi.Connector.K, it.uniroma3.dbtree.spi.Connector.K)/k1">k1</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getRangeQueryL(it.uniroma3.dbtree.spi.Connector.K, it.uniroma3.dbtree.spi.Connector.K)/k2">k2</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-range-query-n-bar.html">getRangeQueryNBar</a></h4>
+</td>
+<td>
+<p>Retrieve from the database the node n s.t. k1 &lt;= n.k_min &lt;= n.k_max &lt;= k2, having maximum level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRangeQueryNBar</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getRangeQueryNBar(it.uniroma3.dbtree.spi.Connector.K, it.uniroma3.dbtree.spi.Connector.K)/k1">k1</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getRangeQueryNBar(it.uniroma3.dbtree.spi.Connector.K, it.uniroma3.dbtree.spi.Connector.K)/k2">k2</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-range-query-r.html">getRangeQueryR</a></h4>
+</td>
+<td>
+<p>Retrieve from the database all nodes n s.t. k1 ≤ n.k_min &lt; k2 &lt; n.k_max, ordered by ascending level.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRangeQueryR</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getRangeQueryR(it.uniroma3.dbtree.spi.Connector.K, it.uniroma3.dbtree.spi.Connector.K)/k1">k1</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$getRangeQueryR(it.uniroma3.dbtree.spi.Connector.K, it.uniroma3.dbtree.spi.Connector.K)/k2">k2</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-root.html">getRoot</a></h4>
+</td>
+<td>
+<p>Returns the DBTree's root node.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRoot</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-closed.html">isClosed</a></h4>
+</td>
+<td>
+<p>Informs about the state of the current connection.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isClosed</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="update.html">update</a></h4>
+</td>
+<td>
+<p>Update a batch of nodes of the database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$update(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)))/nodes">nodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Update a node of the database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$update(it.uniroma3.dbtree.NodeTransfer)/node">node</span><span class="symbol">:</span>&nbsp;<a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="update-d-b-tree.html">updateDBTree</a></h4>
+</td>
+<td>
+<p>Update the DB-tree persisted state.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">updateDBTree</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$updateDBTree(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/create">create</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$updateDBTree(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/update">update</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.Connector$updateDBTree(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/delete">delete</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/index.html"><span class="identifier">Triple</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../it.uniroma3.dbtree.spi.impl.connectors/-s-q-l-connector/index.html">SQLConnector</a></h4>
+</td>
+<td>
+<p><a href="./index.html">Connector</a> example class for an underlying SQL database. (Tested on PostgreSQL and mySQL)</p>
+<code><span class="keyword">class </span><span class="identifier">SQLConnector</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Connector</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

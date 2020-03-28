@@ -9,8 +9,14 @@
 <table>
 <tbody>
 <tr>
-<h5><a href="../it.uniroma3.dbtree/-connector/index.html">it.uniroma3.dbtree.Connector</a></h5>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.functions/-average-int/index.html">it.uniroma3.dbtree.spi.impl.functions.AverageInt</a></h5>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi/-connector/index.html">it.uniroma3.dbtree.spi.Connector</a></h5>
 <p>Interface for the database connector.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.functions/-count-int/index.html">it.uniroma3.dbtree.spi.impl.functions.CountInt</a></h5>
 </tr>
 <tr>
 <h5><a href="../it.uniroma3.dbtree/-d-b-element/index.html">it.uniroma3.dbtree.DBElement</a></h5>
@@ -21,21 +27,78 @@
 <p>The DBTree class.</p>
 </tr>
 <tr>
-<h5><a href="../it.uniroma3.dbtree/-d-b-tree-exception/index.html">it.uniroma3.dbtree.DBTreeException</a></h5>
-<p>DBTree class exception.
-Used to throw all non-resolvable complications which may occur during DBTree procedures.</p>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-department-employee/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.DepartmentEmployee</a></h5>
+<p>The Key type maintained by the <a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-department-employees-parser/index.html">DepartmentEmployeesParser</a>.</p>
 </tr>
 <tr>
-<h5><a href="../it.uniroma3.dbtree/-function/index.html">it.uniroma3.dbtree.Function</a></h5>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-department-employees-parser/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.DepartmentEmployeesParser</a></h5>
+<p>Example of <a href="../it.uniroma3.dbtree.spi/-key-parser-group-by/index.html">KeyParserGroupBy</a> class, managing a groupBy key: <a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-department-employee/index.html">DepartmentEmployee</a>.
+Group: the name of the department.
+Least significant key's component: <a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-person/index.html">Person</a>.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi/-function/index.html">it.uniroma3.dbtree.spi.Function</a></h5>
 <p>Interface for the decomposable aggregation function α ≔ 〈f, g, h〉 supported by the DB-tree.</p>
 </tr>
 <tr>
-<h5><a href="../it.uniroma3.dbtree/-key-parser/index.html">it.uniroma3.dbtree.KeyParser</a></h5>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.functions/-hash-int/index.html">it.uniroma3.dbtree.spi.impl.functions.HashInt</a></h5>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-int-parser/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.IntParser</a></h5>
+<p>Example of <a href="../it.uniroma3.dbtree.spi/-key-parser/index.html">KeyParser</a> class, managing simple key: Int.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi/-key-parser/index.html">it.uniroma3.dbtree.spi.KeyParser</a></h5>
 <p>Interface for the KeyParser.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi/-key-parser-group-by/index.html">it.uniroma3.dbtree.spi.KeyParserGroupBy</a></h5>
+<p>Abstract class that extends the KeyParser interface.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.functions/-max-int/index.html">it.uniroma3.dbtree.spi.impl.functions.MaxInt</a></h5>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.functions/-min-int/index.html">it.uniroma3.dbtree.spi.impl.functions.MinInt</a></h5>
 </tr>
 <tr>
 <h5><a href="../it.uniroma3.dbtree/-node-transfer/index.html">it.uniroma3.dbtree.NodeTransfer</a></h5>
 <p>DTO for a DB-tree node, employed for mediating communications with the database.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-date-key/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.PairIntDateKey</a></h5>
+<p>The Key type maintained by the PairIntDateParser.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-date-parser/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.PairIntDateParser</a></h5>
+<p>Example of <a href="../it.uniroma3.dbtree.spi/-key-parser/index.html">KeyParser</a> class, managing key: <a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-date-key/index.html">PairIntDateKey</a>.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-int-key/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.PairIntIntKey</a></h5>
+<p>The Key type maintained by the PairIntIntParser.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-int-parser/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.PairIntIntParser</a></h5>
+<p>Example of <a href="../it.uniroma3.dbtree.spi/-key-parser/index.html">KeyParser</a> class, managing a key: <a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-int-key/index.html">PairIntIntKey</a>.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-person/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.Person</a></h5>
+<p>The Key type maintained by the <a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-person-parser/index.html">PersonParser</a>.</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-person-parser/index.html">it.uniroma3.dbtree.spi.impl.keyParsers.PersonParser</a></h5>
+<p>Example of <a href="../it.uniroma3.dbtree.spi/-key-parser/index.html">KeyParser</a> class, managing a groupBy key: <a href="../it.uniroma3.dbtree.spi.impl.key-parsers/-person/index.html">Person</a>.
+A Person is identify by firstName and lastName</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.connectors/-s-q-l-connector/index.html">it.uniroma3.dbtree.spi.impl.connectors.SQLConnector</a></h5>
+<p><a href="../it.uniroma3.dbtree.spi/-connector/index.html">Connector</a> example class for an underlying SQL database. (Tested on PostgreSQL and mySQL)</p>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.functions/-sum-count-int/index.html">it.uniroma3.dbtree.spi.impl.functions.SumCountInt</a></h5>
+</tr>
+<tr>
+<h5><a href="../it.uniroma3.dbtree.spi.impl.functions/-sum-int/index.html">it.uniroma3.dbtree.spi.impl.functions.SumInt</a></h5>
 </tr>
 </tbody>
 </table>

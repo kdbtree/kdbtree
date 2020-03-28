@@ -18,6 +18,9 @@
 package it.uniroma3.dbtree
 
 
+import it.uniroma3.dbtree.spi.Connector
+import it.uniroma3.dbtree.spi.Function
+import it.uniroma3.dbtree.spi.KeyParserGroupBy
 import kotlinx.coroutines.*
 import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets
@@ -539,16 +542,18 @@ class DBTree<K, V: Serializable, A: Serializable, D> (
      * @param range the input range.
      * @return the list of aggregate results of the group-by range query, one for each group.
      */
-    fun groupBy(range: Pair<*, *>) : List<Pair<Any,D?>> {
+    fun groupBy(range: Pair<List<Any>, List<Any>>) : List<Pair<List<Any>,D?>> {
 
+        // execute a cast of the keyParser to keyParserGroupBy to allow the groupBy functions
+        kp as KeyParserGroupBy
 
-        val y1 = range.first!!
-        val y2 = range.second!!
+        var y1 = range.first
+        val y2 = range.second
 
         // steps 1,2,3 of the algorithm
         lateinit var L : List<Node>
         lateinit var R : List<Node>
-        lateinit var n_bar : Map<Any?, Node>
+        lateinit var n_bar : Map<List<Any>, Node>
 
         val threads : MutableList<Thread> = mutableListOf()
         threads.add( Thread{ L = c.getGroupByL(y1,y2).map{Node(it)} }.apply{start()} )
@@ -556,15 +561,15 @@ class DBTree<K, V: Serializable, A: Serializable, D> (
         threads.add( Thread{ n_bar = c.getGroupByNBar(y1,y2).mapValues {Node(it.value)} }.apply{start()} )
         threads.forEach { it.join() }
 
-        val listRes = mutableListOf<Deferred<Pair<Any, D?>>>()
+        val listRes = mutableListOf<Deferred<Pair<List<Any>, D?>>>()
 
         // For every x in the dbtree
         for(x in n_bar.keys){
             val Lx = L.filter { kp.group("${it.k_max}") == x }
             val Rx = R.filter { kp.group("${it.k_min}") == x }
-            val k1 = kp.parse("($x/$y1)")
-            val k2 = kp.parse("($x/$y2)")
-            listRes.add(GlobalScope.async { Pair(x!!, calculateAggr(Lx, Rx, n_bar[x], k1, k2)) })
+            val k1 = kp.bind(x,y1)
+            val k2 = kp.bind(x,y2)
+            listRes.add(GlobalScope.async { Pair(x, calculateAggr(Lx, Rx, n_bar[x], k1, k2)) })
         }
 
         return runBlocking { listRes.awaitAll() }

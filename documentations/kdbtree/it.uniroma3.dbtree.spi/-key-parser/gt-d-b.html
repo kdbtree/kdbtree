@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KeyParser.gtDB - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi</a>&nbsp;/&nbsp;<a href="index.html">KeyParser</a>&nbsp;/&nbsp;<a href="./gt-d-b.html">gtDB</a><br/>
+<br/>
+<h1>gtDB</h1>
+<a name="it.uniroma3.dbtree.spi.KeyParser$gtDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">gtDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$gtDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$gtDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/KeyParser.kt#L135">(source)</a>
+<p>DB query for 'greater than' relationship.</p>
+<p>Returns the string querying underlying DB for all elements having key (attribute) greater than a given value.
+Underlying dataset must know how to interpret the query, and return the expected result.</p>
+<h3>Parameters</h3>
+<p><a name="columnName"></a>
+<code>columnName</code> - the list of the names of the database columns interested in the comparison
+(they represent the k_min or k_max columns); since this method is only
+invoked from connector's queries, this field must identify K in the database
+(it is recommended to use this.keyColumnsDefinitionDB() to generate this list).</p>
+<p><a name="k"></a>
+<code>k</code> - the key soil value.</p>
+<p><strong>Return</strong><br/>
+the string to be interpreted by underlying database as 'k_min &gt; k' ('k_max &gt; k').</p>
+</BODY>
+</HTML>

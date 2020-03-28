@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>it.uniroma3.dbtree.spi - kdbtree</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="./index.html">it.uniroma3.dbtree.spi</a><br/>
+<br/>
+<h2>Package it.uniroma3.dbtree.spi</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-connector/index.html">Connector</a></h4>
+</td>
+<td>
+<p>Interface for the database connector.</p>
+<code><span class="keyword">interface </span><span class="identifier">Connector</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-function/index.html">Function</a></h4>
+</td>
+<td>
+<p>Interface for the decomposable aggregation function α ≔ 〈f, g, h〉 supported by the DB-tree.</p>
+<code><span class="keyword">interface </span><span class="identifier">Function</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">A</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">D</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-key-parser/index.html">KeyParser</a></h4>
+</td>
+<td>
+<p>Interface for the KeyParser.</p>
+<code><span class="keyword">interface </span><span class="identifier">KeyParser</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-key-parser-group-by/index.html">KeyParserGroupBy</a></h4>
+</td>
+<td>
+<p>Abstract class that extends the KeyParser interface.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KeyParserGroupBy</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-key-parser/index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SQLConnector.updateDBTree - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi.impl.connectors</a>&nbsp;/&nbsp;<a href="index.html">SQLConnector</a>&nbsp;/&nbsp;<a href="./update-d-b-tree.html">updateDBTree</a><br/>
+<br/>
+<h1>updateDBTree</h1>
+<a name="it.uniroma3.dbtree.spi.impl.connectors.SQLConnector$updateDBTree(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))"></a>
+<code><span class="keyword">fun </span><span class="identifier">updateDBTree</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.connectors.SQLConnector$updateDBTree(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/create">create</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.connectors.SQLConnector$updateDBTree(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/update">update</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.connectors.SQLConnector$updateDBTree(kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((it.uniroma3.dbtree.NodeTransfer)), kotlin.collections.Collection((kotlin.Triple((kotlin.Int, kotlin.String, )))))/delete">delete</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-triple/index.html"><span class="identifier">Triple</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/impl/connectors/SQLConnector.kt#L438">(source)</a>
+<p>Update the DB-tree persisted state.</p>
+<p>This method allows to (I) create, (II) update and (III) delete nodes at once from the underlying database.
+This essentially consists of a combination of other connector's methods, enhancing optimization and
+transaction control.</p>
+<h3>Parameters</h3>
+<p><a name="create"></a>
+<code>create</code> - the batch of nodes to be created.</p>
+<p><a name="update"></a>
+<code>update</code> - the batch of nodes to be updated.</p>
+<p><a name="delete"></a>
+<code>delete</code> - the batch of nodes to be deleted.</p>
+</BODY>
+</HTML>

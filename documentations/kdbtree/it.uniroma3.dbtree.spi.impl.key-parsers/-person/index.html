@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Person - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi.impl.keyParsers</a>&nbsp;/&nbsp;<a href="./index.html">Person</a><br/>
+<br/>
+<h1>Person</h1>
+<code><span class="keyword">class </span><span class="identifier">Person</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Person</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/impl/keyParsers/PersonParser.kt#L84">(source)</a>
+<p>The Key type maintained by the <a href="../-person-parser/index.html">PersonParser</a>.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>The Key type maintained by the <a href="../-person-parser/index.html">PersonParser</a>.</p>
+<code><span class="identifier">Person</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Person$<init>(kotlin.String, kotlin.String)/firstName">firstName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Person$<init>(kotlin.String, kotlin.String)/lastName">lastName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="first-name.html">firstName</a></h4>
+</td>
+<td>
+<p>of the Person.</p>
+<code><span class="keyword">var </span><span class="identifier">firstName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="last-name.html">lastName</a></h4>
+</td>
+<td>
+<p>of the Person.</p>
+<code><span class="keyword">var </span><span class="identifier">lastName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="compare-to.html">compareTo</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">compareTo</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Person$compareTo(it.uniroma3.dbtree.spi.impl.keyParsers.Person)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Person</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="equals.html">equals</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Person$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-string.html">toString</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="comparator.html">comparator</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">comparator</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparator/index.html"><span class="identifier">Comparator</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Person</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get-max.html">getMax</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getMax</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Person</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-min.html">getMin</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getMin</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Person</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

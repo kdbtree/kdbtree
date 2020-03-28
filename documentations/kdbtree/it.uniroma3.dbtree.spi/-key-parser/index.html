@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KeyParser - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi</a>&nbsp;/&nbsp;<a href="./index.html">KeyParser</a><br/>
+<br/>
+<h1>KeyParser</h1>
+<code><span class="keyword">interface </span><span class="identifier">KeyParser</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/KeyParser.kt#L34">(source)</a>
+<p>Interface for the KeyParser.</p>
+<p>The KeyParser is an auxiliary interface managing all information related with the key.
+In particular, the KeyParser provides the following services: (I) key parsing, (II) key comparison
+translation for database queries, (III) key definition for database schema.
+In particular, to fulfill services (II) and (III), KeyParser must be aware of the underlying database technology.</p>
+<h3>Parameters</h3>
+<p><a name="K"></a>
+<code>K</code> - the comparable Key.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="key-columns-definition-d-b.html">keyColumnsDefinitionDB</a></h4>
+</td>
+<td>
+<p>It is the list of all the column names and their definition that identify a key.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">keyColumnsDefinitionDB</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="eq-d-b.html">eqDB</a></h4>
+</td>
+<td>
+<p>DB query for 'equal to' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$eqDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$eqDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="geq-d-b.html">geqDB</a></h4>
+</td>
+<td>
+<p>DB query for 'greater than or equal' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">geqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$geqDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$geqDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-max.html">getMax</a></h4>
+</td>
+<td>
+<p>Returns the maximum value for the managed key type.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMax</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">K</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-min.html">getMin</a></h4>
+</td>
+<td>
+<p>Returns the minimum value for the managed key type..</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMin</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">K</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="gt-d-b.html">gtDB</a></h4>
+</td>
+<td>
+<p>DB query for 'greater than' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">gtDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$gtDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$gtDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="leq-d-b.html">leqDB</a></h4>
+</td>
+<td>
+<p>DB query for 'less than or equal' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">leqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$leqDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$leqDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="lt-d-b.html">ltDB</a></h4>
+</td>
+<td>
+<p>DB query for 'less than' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ltDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$ltDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$ltDB(kotlin.collections.List((kotlin.String)), it.uniroma3.dbtree.spi.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="parse.html">parse</a></h4>
+</td>
+<td>
+<p>Parses a key given the corresponding serialized representation.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">parse</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$parse(kotlin.String)/s">s</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">K</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-d-b.html">toDB</a></h4>
+</td>
+<td>
+<p>Returns the full representation of a key into the underlying database.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$toDB(it.uniroma3.dbtree.spi.KeyParser.K)/k">k</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-node-transfer.html">toNodeTransfer</a></h4>
+</td>
+<td>
+<p>Converts the ResultSet of a DB tuple into the corresponding NodeTransfer.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toNodeTransfer</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParser$toNodeTransfer(java.sql.ResultSet)/rs">rs</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-int-parser/index.html">IntParser</a></h4>
+</td>
+<td>
+<p>Example of <a href="./index.html">KeyParser</a> class, managing simple key: Int.</p>
+<code><span class="keyword">class </span><span class="identifier">IntParser</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-key-parser-group-by/index.html">KeyParserGroupBy</a></h4>
+</td>
+<td>
+<p>Abstract class that extends the KeyParser interface.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KeyParserGroupBy</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-date-parser/index.html">PairIntDateParser</a></h4>
+</td>
+<td>
+<p>Example of <a href="./index.html">KeyParser</a> class, managing key: <a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-date-key/index.html">PairIntDateKey</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">PairIntDateParser</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-date-key/index.html"><span class="identifier">PairIntDateKey</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-int-parser/index.html">PairIntIntParser</a></h4>
+</td>
+<td>
+<p>Example of <a href="./index.html">KeyParser</a> class, managing a key: <a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-int-key/index.html">PairIntIntKey</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">PairIntIntParser</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-pair-int-int-key/index.html"><span class="identifier">PairIntIntKey</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-person-parser/index.html">PersonParser</a></h4>
+</td>
+<td>
+<p>Example of <a href="./index.html">KeyParser</a> class, managing a groupBy key: <a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-person/index.html">Person</a>.
+A Person is identify by firstName and lastName</p>
+<code><span class="keyword">class </span><span class="identifier">PersonParser</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-person/index.html"><span class="identifier">Person</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

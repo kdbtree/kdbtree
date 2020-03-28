@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Department - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi.impl.keyParsers</a>&nbsp;/&nbsp;<a href="./index.html">Department</a><br/>
+<br/>
+<h1>Department</h1>
+<code><span class="keyword">class </span><span class="identifier">Department</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Department</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/impl/keyParsers/DepartmentParser.kt#L99">(source)</a>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">Department</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Department$<init>(kotlin.String, it.uniroma3.dbtree.spi.impl.keyParsers.Person)/depName">depName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Department$<init>(kotlin.String, it.uniroma3.dbtree.spi.impl.keyParsers.Person)/employ">employ</span><span class="symbol">:</span>&nbsp;<a href="../-person/index.html"><span class="identifier">Person</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="dep-name.html">depName</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">depName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="employ.html">employ</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">employ</span><span class="symbol">: </span><a href="../-person/index.html"><span class="identifier">Person</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="compare-to.html">compareTo</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">compareTo</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Department$compareTo(it.uniroma3.dbtree.spi.impl.keyParsers.Department)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Department</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="equals.html">equals</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.keyParsers.Department$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-string.html">toString</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="comparator.html">comparator</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">comparator</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparator/index.html"><span class="identifier">Comparator</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Department</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get-max.html">getMax</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getMax</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Department</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-min.html">getMin</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getMin</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Department</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

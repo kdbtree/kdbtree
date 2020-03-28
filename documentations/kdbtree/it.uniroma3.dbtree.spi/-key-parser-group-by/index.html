@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KeyParserGroupBy - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi</a>&nbsp;/&nbsp;<a href="./index.html">KeyParserGroupBy</a><br/>
+<br/>
+<h1>KeyParserGroupBy</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KeyParserGroupBy</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-key-parser/index.html"><span class="identifier">KeyParser</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="keyword"> where </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/KeyParserGroupBy.kt#L35">(source)</a>
+<p>Abstract class that extends the KeyParser interface.</p>
+<p>The KeyParserGroupBy is an auxiliary abstract class that adds more information about the key that are needed
+to perform the groupBy operation.</p>
+<p>All keys used in a groupBy query can be summarize as a pair (x,y) where x is the most significant part and identify
+a group and y is the least significant part that identify the range.
+The KeyParserGroupBy helps the Connector to identify the x and y part of a key.</p>
+<h3>Parameters</h3>
+<p><a name="K"></a>
+<code>K</code> - the comparable Key.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Abstract class that extends the KeyParser interface.</p>
+<code><span class="identifier">KeyParserGroupBy</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="key-columns-definition-d-b.html">keyColumnsDefinitionDB</a></h4>
+</td>
+<td>
+<p>It is the list of all the column names and their definition that identify a key.</p>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">keyColumnsDefinitionDB</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="least-significant-definition.html">leastSignificantDefinition</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">leastSignificantDefinition</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="most-significant-definition.html">mostSignificantDefinition</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">mostSignificantDefinition</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="bind.html">bind</a></h4>
+</td>
+<td>
+<p>Returns a key K.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">bind</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$bind(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$bind(kotlin.collections.List((kotlin.Any)), kotlin.collections.List((kotlin.Any)))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">K</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="group.html">group</a></h4>
+</td>
+<td>
+<p>Returns the group of the passed composite key.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">group</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$group(kotlin.String)/s">s</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="lsp_geq-d-b.html">lsp_geqDB</a></h4>
+</td>
+<td>
+<p>DB query for 'greater than or equal' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lsp_geqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_geqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_geqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="lsp_gt-d-b.html">lsp_gtDB</a></h4>
+</td>
+<td>
+<p>DB query for 'greater than' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lsp_gtDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_gtDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_gtDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="lsp_leq-d-b.html">lsp_leqDB</a></h4>
+</td>
+<td>
+<p>DB query for 'less than or equal' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lsp_leqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_leqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_leqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="lsp_lt-d-b.html">lsp_ltDB</a></h4>
+</td>
+<td>
+<p>DB query for 'less than' relationship.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lsp_ltDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_ltDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/columnName">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$lsp_ltDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.Any)))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="most_neq-d-b.html">most_neqDB</a></h4>
+</td>
+<td>
+<p>Let k_min = (x_min, y_min).
+Let k_max = (x_max, y_max).</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">most_neqDB</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$most_neqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.String)))/columnNameMin">columnNameMin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.KeyParserGroupBy$most_neqDB(kotlin.collections.List((kotlin.String)), kotlin.collections.List((kotlin.String)))/columnNameMax">columnNameMax</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-department-employees-parser/index.html">DepartmentEmployeesParser</a></h4>
+</td>
+<td>
+<p>Example of <a href="./index.html">KeyParserGroupBy</a> class, managing a groupBy key: <a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-department-employee/index.html">DepartmentEmployee</a>.
+Group: the name of the department.
+Least significant key's component: <a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-person/index.html">Person</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">DepartmentEmployeesParser</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">KeyParserGroupBy</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree.spi.impl.key-parsers/-department-employee/index.html"><span class="identifier">DepartmentEmployee</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

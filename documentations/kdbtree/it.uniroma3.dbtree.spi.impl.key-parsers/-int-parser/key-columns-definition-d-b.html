@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IntParser.keyColumnsDefinitionDB - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi.impl.keyParsers</a>&nbsp;/&nbsp;<a href="index.html">IntParser</a>&nbsp;/&nbsp;<a href="./key-columns-definition-d-b.html">keyColumnsDefinitionDB</a><br/>
+<br/>
+<h1>keyColumnsDefinitionDB</h1>
+<a name="it.uniroma3.dbtree.spi.impl.keyParsers.IntParser$keyColumnsDefinitionDB"></a>
+<code><span class="keyword">val </span><span class="identifier">keyColumnsDefinitionDB</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/impl/keyParsers/IntParser.kt#L43">(source)</a>
+<p>It is the list of all the column names and their definition that identify a key.</p>
+<p>This method provides the column scheme for the key type (K) managed by the current KeyParser object.
+This method will be used by the Connector class at the moment of defining the table persisting the
+DB-tree.</p>
+<h3>Parameters</h3>
+<p><a name="keyColumnsDefinitionDB"></a>
+<code>keyColumnsDefinitionDB</code> - the list of pairs: &lt;columnName, columnDefinition&gt;. ColumnDefinition must
+be understood and interpreted by the underlying database to define the the corresponding column.</p>
+</BODY>
+</HTML>

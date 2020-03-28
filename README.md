@@ -184,8 +184,8 @@ to (1) realize custom DB-tree modules for your specific purposes,
     
     In the next points, the essential (implementation specific) 
     components of a DB-tree are illustrated. You can find some 
-    already implemented examples in the package 
-    `it.uniroma3.dbtree.examples.*` to get started.
+    already implemented implementedSPI in the package 
+    `it.uniroma3.dbtree.implementedSPI.*` to get started.
  2. Implement the **custom aggregation function** you need your DB-tree 
     to maintain:
     `val aggrFun = MyFunction()`, being the class `MyFunction` an 

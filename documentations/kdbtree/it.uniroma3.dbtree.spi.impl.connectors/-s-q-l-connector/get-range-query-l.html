@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SQLConnector.getRangeQueryL - kdbtree</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kdbtree</a>&nbsp;/&nbsp;<a href="../index.html">it.uniroma3.dbtree.spi.impl.connectors</a>&nbsp;/&nbsp;<a href="index.html">SQLConnector</a>&nbsp;/&nbsp;<a href="./get-range-query-l.html">getRangeQueryL</a><br/>
+<br/>
+<h1>getRangeQueryL</h1>
+<a name="it.uniroma3.dbtree.spi.impl.connectors.SQLConnector$getRangeQueryL(it.uniroma3.dbtree.spi.impl.connectors.SQLConnector.K, it.uniroma3.dbtree.spi.impl.connectors.SQLConnector.K)"></a>
+<code><span class="keyword">fun </span><span class="identifier">getRangeQueryL</span><span class="symbol">(</span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.connectors.SQLConnector$getRangeQueryL(it.uniroma3.dbtree.spi.impl.connectors.SQLConnector.K, it.uniroma3.dbtree.spi.impl.connectors.SQLConnector.K)/k1">k1</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">, </span><span class="identifier" id="it.uniroma3.dbtree.spi.impl.connectors.SQLConnector$getRangeQueryL(it.uniroma3.dbtree.spi.impl.connectors.SQLConnector.K, it.uniroma3.dbtree.spi.impl.connectors.SQLConnector.K)/k2">k2</span><span class="symbol">:</span>&nbsp;<span class="identifier">K</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../it.uniroma3.dbtree/-node-transfer/index.html"><span class="identifier">NodeTransfer</span></a><span class="symbol">&gt;</span></code> <a href="https://github.com/kdbtree/kdbtree/src/main/kotlin/it/uniroma3/dbtree/spi/impl/connectors/SQLConnector.kt#L208">(source)</a>
+<p>Retrieve from the database all nodes n s.t. n.k_min &lt; k1 &lt; n.k_max ≤ k2, ordered by ascending level.</p>
+<h3>Parameters</h3>
+<p><a name="k1"></a>
+<code>k1</code> - the minimum key in the range.</p>
+<p><a name="k2"></a>
+<code>k2</code> - the maximum key in the range.</p>
+<p><strong>Return</strong><br/>
+the list of retrieved nodes.</p>
+</BODY>
+</HTML>
