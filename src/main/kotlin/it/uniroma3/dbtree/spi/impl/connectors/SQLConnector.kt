@@ -30,7 +30,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 /**
- * [Connector] example class for an underlying SQL database. (Tested on PostgreSQL and mySQL)
+ * [Connector] reference implementation for an underlying SQL database. (Tested on PostgreSQL and mySQL)
  *
  * This class provides methods to establish and exploit the connection with the underlying Postgres database.
  * The DB-tree class will refer to this class to create, retrieve, update and delete the persisted nodes necessary
